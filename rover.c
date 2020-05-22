@@ -1100,7 +1100,7 @@ main(int argc, char *argv[])
     if (rover.nfiles > 0)
         strcat(CLIPBOARD, ENAME(ESEL));
     while (1) {
-        ch = rover_getch();
+        rover_get_wch((wint_t *) &ch);
         key = keyname(ch);
         clear_message();
         if (!strcmp(key, RVK_QUIT)) break;
@@ -1109,34 +1109,34 @@ main(int argc, char *argv[])
             cd(0);
         } else if (!strcmp(key, RVK_HELP)) {
             spawn((char *[]) {"man", "rover", NULL});
-        } else if (!strcmp(key, RVK_DOWN)) {
+        } else if (!strcmp(key, RVK_DOWN) || ch == KEY_DOWN) {
             if (!rover.nfiles) continue;
             ESEL = MIN(ESEL + 1, rover.nfiles - 1);
             update_view();
-        } else if (!strcmp(key, RVK_UP)) {
+        } else if (!strcmp(key, RVK_UP) || ch == KEY_UP) {
             if (!rover.nfiles) continue;
             ESEL = MAX(ESEL - 1, 0);
             update_view();
-        } else if (!strcmp(key, RVK_JUMP_DOWN)) {
+        } else if (!strcmp(key, RVK_JUMP_DOWN) || ch == KEY_NPAGE) {
             if (!rover.nfiles) continue;
             ESEL = MIN(ESEL + RV_JUMP, rover.nfiles - 1);
             if (rover.nfiles > HEIGHT)
                 SCROLL = MIN(SCROLL + RV_JUMP, rover.nfiles - HEIGHT);
             update_view();
-        } else if (!strcmp(key, RVK_JUMP_UP)) {
+        } else if (!strcmp(key, RVK_JUMP_UP) || ch == KEY_PPAGE) {
             if (!rover.nfiles) continue;
             ESEL = MAX(ESEL - RV_JUMP, 0);
             SCROLL = MAX(SCROLL - RV_JUMP, 0);
             update_view();
-        } else if (!strcmp(key, RVK_JUMP_TOP)) {
+        } else if (!strcmp(key, RVK_JUMP_TOP) || ch == KEY_HOME) {
             if (!rover.nfiles) continue;
             ESEL = 0;
             update_view();
-        } else if (!strcmp(key, RVK_JUMP_BOTTOM)) {
+        } else if (!strcmp(key, RVK_JUMP_BOTTOM) || ch == KEY_END) {
             if (!rover.nfiles) continue;
             ESEL = rover.nfiles - 1;
             update_view();
-        } else if (!strcmp(key, RVK_CD_DOWN)) {
+        } else if (!strcmp(key, RVK_CD_DOWN) || ch == KEY_RIGHT) {
             if (!rover.nfiles || !S_ISDIR(EMODE(ESEL))) continue;
             if (chdir(ENAME(ESEL)) == -1) {
                 message(RED, "Cannot access \"%s\".", ENAME(ESEL));
@@ -1144,7 +1144,7 @@ main(int argc, char *argv[])
             }
             strcat(CWD, ENAME(ESEL));
             cd(1);
-        } else if (!strcmp(key, RVK_CD_UP)) {
+        } else if (!strcmp(key, RVK_CD_UP) || ch == KEY_LEFT) {
             char *dirname, first;
             if (!strcmp(CWD, "/")) continue;
             CWD[strlen(CWD) - 1] = '\0';
