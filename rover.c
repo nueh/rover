@@ -861,9 +861,9 @@ static int delfile(const char *path) {
     ret = lstat(path, &st);
     if (ret < 0) return ret;
     update_progress(st.st_size);
-    return unlink(path);
+    return remove(path);
 }
-static PROCESS deldir = rmdir;
+static PROCESS deldir = remove;
 static int addfile(const char *path) {
     /* Using creat(2) because mknod(2) doesn't seem to be portable. */
     int ret;
@@ -927,7 +927,7 @@ static int movfile(const char *srcpath) {
     } else if (errno == EXDEV) {
         ret = cpyfile(srcpath);
         if (ret < 0) return ret;
-        ret = unlink(srcpath);
+        ret = remove(srcpath);
     }
     return ret;
 }
