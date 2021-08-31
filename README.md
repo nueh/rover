@@ -28,22 +28,22 @@ Quick Start
 
  Basic Usage:
  ```
-       q - quit Rover
-       ? - show Rover manual
-     j/k - move cursor down/up
-     J/K - move cursor down/up 10 lines
-     g/G - move cursor to top/bottom of listing
-       l - enter selected directory
-       h - go to parent directory
-       H - go to $HOME directory
-     0-9 - change tab
-  RETURN - open $SHELL on the current directory
-   SPACE - open $PAGER with the selected file
-       e - open $VISUAL or $EDITOR with the selected file
-       / - start incremental search (RETURN to finish)
-     n/N - create new file/directory
-       R - rename selected file or directory
-       D - delete selected file or (empty) directory
+             q - quit Rover
+             ? - show Rover manual
+   j,DOWN/k,UP - move cursor down/up
+           J/K - move cursor down/up 10 lines
+           g/G - move cursor to top/bottom of listing
+l,RIGHT,RETURN - enter selected directory
+        h,LEFT - go to parent directory
+             H - go to $HOME directory
+           0-9 - change tab
+             T - open $SHELL (Terminal) on the current directory
+         SPACE - open $PAGER with the selected file
+             e - open $VISUAL or $EDITOR with the selected file
+             / - start incremental search (RETURN to finish)
+           n/N - create new file/directory
+             R - rename selected file or directory
+             D - delete selected file or (empty) directory
  ```
 
  Please read rover(1) for more information.
