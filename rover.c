@@ -1136,7 +1136,7 @@ main(int argc, char *argv[])
             if (!rover.nfiles) continue;
             ESEL = rover.nfiles - 1;
             update_view();
-        } else if (!strcmp(key, RVK_CD_DOWN) || ch == KEY_RIGHT) {
+        } else if (!strcmp(key, RVK_CD_DOWN) || !strcmp(key, RVK_ENTER) || ch == KEY_RIGHT) {
             if (!rover.nfiles || !S_ISDIR(EMODE(ESEL))) continue;
             if (chdir(ENAME(ESEL)) == -1) {
                 message(RED, "Cannot access \"%s\".", ENAME(ESEL));
