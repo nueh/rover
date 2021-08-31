@@ -12,7 +12,7 @@ case "$1" in
     fmt="play %s" ;;
   *.[1-9])
     fmt="man -l %s" ;;
-  *.bac|*.c|*.h|*.sh|*.lua|*.py|*.ml|*[Mm]akefile)
+  *.md|*.bac|*.c|*.h|*.sh|*.lua|*.py|*.ml|*[Mm]akefile)
     fmt="vim %s" ;;
   *)
     fmt="less %s"
