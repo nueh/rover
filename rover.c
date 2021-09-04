@@ -1455,7 +1455,7 @@ paste_path_fail:
             update_view();
         } else if (!strcmp(key, RVK_MARK_DELETE)) {
             if (rover.marks.nentries) {
-                message(YELLOW, "Delete all marked entries? (Y/n)");
+                message(YELLOW, "Delete %d marked entries? (Y/n)", rover.marks.nentries);
                 if (rover_getch() == 'Y')
                     process_marked(NULL, delfile, deldir, "Deleting", "Deleted");
                 else

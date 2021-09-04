@@ -1,4 +1,4 @@
-.TH ROVER 1 2020-06-04 rover\-1.0.1
+.TH ROVER 1 2021-08-31 rover\-1.0.2
 .SH NAME
 rover \- file browser for the terminal
 .SH SYNOPSIS
@@ -78,7 +78,7 @@ another tab that is pointed to the "destination" directory.
 .B q
 Quit rover.
 .TP
-.B j/k
+.B j/k or <DOWN>/<UP>
 Move cursor down/up.
 .TP
 .B J/K
@@ -224,6 +224,7 @@ If you want to change Rover key bindings or colors, you can edit the
 \fIconfig.h\fP file in the source distribution and recompile the program. Rover
 will not use or create any external file during its execution, except when asked
 to do so by user commands or command-line options.
+.SH EXAMPLES
 .SH NOTES
 .PP
 \fBImportant\fR: Currently, Rover never asks for confirmation before overwriting

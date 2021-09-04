@@ -12,8 +12,10 @@ case "$1" in
     fmt="play %s" ;;
   *.[1-9])
     fmt="man -l %s" ;;
-  *.md|*.bac|*.c|*.h|*.sh|*.lua|*.py|*.ml|*[Mm]akefile)
+  *.bac|*.c|*.h|*.sh|*.lua|*.py|*.ml|*[Mm]akefile)
     fmt="vim %s" ;;
+  *.md|*.mkd)
+    fmt="pandoc -t plain %s | less" ;;
   *)
     fmt="less %s"
 esac
