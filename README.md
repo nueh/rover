@@ -79,7 +79,7 @@ Examples
 export ROVER_VISUAL=vim
 export ROVER_OPEN=~/code/rover/open.sh
 export ROVER_PAGER="less 2> /dev/null -N"
-export ROVER_SHELL="sh -c 'echo \"Type EXIT to return to DOS\"; exec \"${SHELL:-sh}\"'"
+export ROVER_SHELL="sh -c 'echo \"Type EXIT to return to Windows 95\"; exec \"${SHELL:-sh}\"'"
 ```
 
 Frequently Asked Questions

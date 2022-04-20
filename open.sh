@@ -15,7 +15,8 @@ case "$1" in
   *.bac|*.c|*.h|*.sh|*.lua|*.py|*.ml|*[Mm]akefile)
     fmt="vim %s" ;;
   *.md|*.mkd)
-    fmt="pandoc -t plain %s | less" ;;
+    #fmt="pandoc -t plain %s | less" ;;
+    fmt="lowdown -Tterm %s | less -R" ;;
   *)
     fmt="less %s"
 esac
