@@ -1,0 +1,10 @@
+## Add this line to your .bashrc
+# test -e "$HOME/.roverrc" && source "$HOME/.roverrc"
+
+export VIMRUNTIME=$(vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015')
+export ROVER_PAGER="$VIMRUNTIME/macros/less.sh"
+#export ROVER_PAGER="less 2> /dev/null"
+export ROVER_VISUAL=vim
+export ROVER_OPEN="$HOME/bin/open.sh"
+export ROVER_SHELL="sh -c 'echo \"Type EXIT to return to Windows 95\"; exec \"${SHELL:-sh}\"'"
+export ROVER_CLIP="/tmp/rover_clipboard"
