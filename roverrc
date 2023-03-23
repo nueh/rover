@@ -1,4 +1,4 @@
-## Add this line to your .bashrc
+## Add this line to your .profile or .bashrc or ...
 # test -e "$HOME/.roverrc" && source "$HOME/.roverrc"
 
 export VIMRUNTIME=$(vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015')
