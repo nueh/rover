@@ -36,7 +36,7 @@ l,RIGHT,RETURN - enter selected directory
         h,LEFT - go to parent directory
              H - go to $HOME directory
            0-9 - change tab
-             S - open $SHELL (Terminal) on the current directory
+             S - open $SHELL on the current directory
          SPACE - open $PAGER with the selected file
              e - open $VISUAL or $EDITOR with the selected file
              / - start incremental search (RETURN to finish)
