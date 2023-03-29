@@ -18,7 +18,7 @@
 #define RVK_PASTE_PATH  "p"
 #define RVK_REFRESH     "r"
 #define RVK_ENTER       "^M"
-#define RVK_SHELL       "T"
+#define RVK_SHELL       "S"
 #define RVK_VIEW        " "
 #define RVK_EDIT        "e"
 #define RVK_OPEN        "o"

@@ -1,6 +1,7 @@
 ## Add this line to your .profile or .bashrc or ...
 # test -e "$HOME/.roverrc" && source "$HOME/.roverrc"
 
+alias f='source $HOME/code/rover/cdrover.sh'
 export VIMRUNTIME=$(vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015')
 export ROVER_PAGER="$VIMRUNTIME/macros/less.sh"
 #export ROVER_PAGER="less 2> /dev/null"
